@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link href="src/style.css" rel="stylesheet">
+    <title>Repeatoldle Classic</title>
+    <link rel="icon" href="src/img/lol-icon.png">
+
+</head>
+
+<body id="classic">
+    <nav id="new-nav">
+        <ul id="main-nav">
+            <li><a href="#"><img class="icon" src="src/img/gclassic-icon.png" height="50"></img></a></li>
+            <li><a href="##"><img class="icon" src="src/img/gspell-icon.png" height="50"></img></a> </li>
+            <li><a href="###"><img class="icon" src="src/img/gquote-icon.png" height="50"></img></a></li>
+        </ul>
+    </nav>
+
+    <div id=main>
+        <label for = "name">Enter your champion</label>
+        <div id = "propositions-input-wrapper">
+            <div id = "input-button">
+                <input type = "text" id = "name" placeholder="Guess a champion here">
+                <span id = "enter-button" onclick = "tryInput()"><img src = "src/img/garrow-icon.png" height = "50"></img></span>
+            </div>
+            <ul id = "propositions">
+
+            </ul>
+        </div>
+
+        <div id = "guess-wrapper">
+            <ul id = "desc">
+                <li>Champion</li>
+                <li>Gender</li>
+                <li>Position(s)</li>
+                <li>Species</li>
+                <li>Resource</li>
+                <li>Range</li>
+                <li>Region(s)</li>
+                <li>Release date</li>
+            </ul>
+            <div id="all-guesses">
+                <ul id = "prev-guess"></ul>
+            </div>
+        </div>
+        <div id = "play-again"></div>
+    </div>
+
+
+
+
+    <script src="src/script.js"></script>
+</body>
+
+</html>

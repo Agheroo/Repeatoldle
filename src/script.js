@@ -31,7 +31,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Fiddlesticks","gender":"Unknown","positions":"Jungle","species":"Demon, Spirit","resource":"Mana","range":"Ranged","regions":"Runeterra","release":2009},
 {"name":"Fiora","gender":"Female","positions":"Top","species":"Human","resource":"Mana","range":"Melee","regions":"Demacia","release":2012},
 {"name":"Fizz","gender":"Male","positions":"Middle","species":"Yordle","resource":"Mana","range":"Melee","regions":"Bilgewater","release":2011},
-{"name":"Galio","gender":"Male","positions":"Middle,Support","species":"Golem","resource":"Mana","range":"Melee","regions":"Demacia","release":2010},
+{"name":"Galio","gender":"Male","positions":"Middle, Support","species":"Golem","resource":"Mana","range":"Melee","regions":"Demacia","release":2010},
 {"name":"Gangplank","gender":"Male","positions":"Top","species":"Human","resource":"Mana","range":"Melee","regions":"Bilgewater","release":2009},
 {"name":"Garen","gender":"Male","positions":"Top","species":"Human","resource":"Manaless","range":"Melee","regions":"Demacia","release":2010},
 {"name":"Gnar","gender":"Male","positions":"Top","species":"Yordle","resource":"Rage","range":"Ranged, Melee","regions":"Freljord","release":2014},

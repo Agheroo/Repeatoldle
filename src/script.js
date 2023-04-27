@@ -216,7 +216,7 @@ function checkCharac(tofind,guess,charac){
     if(tofind[charac] == guess[charac])
         return 1;
     else{
-        for(let char in guesschars){
+        for(let char in findchars){
             if(findchars.includes(guesschars[char]) || guesschars.includes(findchars[char]))
                 return 2;
             else

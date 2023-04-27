@@ -22,7 +22,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Corki","gender":"Male","positions":"Middle","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle city, Piltover","release":2009},
 {"name":"Darius","gender":"Male","positions":"Top","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2012},
 {"name":"Diana","gender":"Female","positions":"Middle, Jungle","species":"Aspect, Human","resource":"Mana","range":"Melee","regions":"Targon","release":2012},
-{"name":"Dr. Mundo","gender":"Male","positions":"Top","species":"Chemically altered,Human","resource":"Health","range":"Melee","regions":"Zaun","release":2009},
+{"name":"Dr. Mundo","gender":"Male","positions":"Top","species":"Chemically altered, Human","resource":"Health","range":"Melee","regions":"Zaun","release":2009},
 {"name":"Draven","gender":"Male","positions":"Bottom","species":"Human","resource":"Mana","range":"Ranged","regions":"Noxus","release":2012}, 
 {"name":"Ekko","gender":"Male","positions":"Middle","species":"Human","resource":"Mana","range":"Melee","regions": "Zaun","release":2015},
 {"name":"Elise","gender":"Female","positions":"Jungle","species":"Human, Magically altered","resource":"Mana","range": "Ranged, Melee","regions":"Noxus, Shadow isles","release":2012},
@@ -161,7 +161,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Teemo","gender":"Male","positions":"Top","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle City","release":2009},
 {"name":"Taric","gender":"Male","positions":"Suppirt","species":"Aspect, Human","resource":"Mana","rangeMelee":"","regions":"Targon, Demacia","release":2009},
 {"name":"Talon","gender":"Male","positions":"Middle, Jungle","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2011}
-]
+];
 
 var allguesses = document.getElementById("all-guesses");
 var champtofind;
@@ -174,9 +174,8 @@ var namesGuessed = [];
 
 
 document.addEventListener('keydown', function(event){
-    if(event.key == "Enter"){
+    if(event.key == "Enter")
         tryInput();
-    }
 });
 function startGame(){
     input = "";
@@ -200,14 +199,30 @@ function checkData(input){
  * @returns {int} 1 if all corresponds, 0 if nothing, 2 if partially
  */
 function checkCharac(tofind,guess,charac){    
+    let tmpguess = String(guess[charac]).split(",");
+    let tmpfind = String(tofind[charac]).split(",");
+    let guesschars = [], findchars = [];
+
+    for(let char in tmpfind){
+        if(tmpfind[char].charAt(0) == " ")
+            tmpfind[char] = tmpfind[char].slice(1);
+        findchars.push(tmpfind[char]);
+    }
+    for(let char in tmpguess){
+        if(tmpguess[char].charAt(0) == " ")     //Split the string when there are multiple choices in one charac
+            tmpguess[char] = tmpguess[char].slice(1);
+        guesschars.push(tmpguess[char]);
+    }
+    console.log(guesschars);
     if(tofind[charac] == guess[charac])
         return 1;
     else{
-        if((String(tofind[charac]).includes(String(guess[charac])) && String(tofind[charac]).includes(",")) || (String(guess[charac]).includes(String(tofind[charac])) && String(guess[charac]).includes(","))){
-            return 2;
+        for(let char in guesschars){
+            if(findchars.includes(guesschars[char]) || guesschars.includes(findchars[char]))
+                return 2;
+            else
+                return 0;
         }
-        else
-            return 0;
     }
 }
 
@@ -219,16 +234,21 @@ function checkCharac(tofind,guess,charac){
 function addGuess(champname, tofind){
     let champion = findChampWithName(champname);
 
+    let datearrow = document.createElement("img");
+    datearrow.src = "src/img/above.png";
+    datearrow.style.filter = "opacity(20%)";
+    datearrow.style.height = "100px";
+    datearrow.style.position = "absolute";
+
     let guess = document.createElement("ul");
     guess.className = "guess";
     let icon = document.createElement("img");
-    
     icon.src = "src/champions/icons/"+ champname.toUpperCase()[0]+ champname.substring(1,champname.length).toLowerCase() + "Square.webp";
+
     let li =document.createElement("li");
     li.style.animation = "flip 1s forwards";
     li.append(icon);
     guess.append(li);
-
     let name = document.createElement("p");
     let gender = document.createElement("p");
     let positions = document.createElement("p");
@@ -259,6 +279,13 @@ function addGuess(champname, tofind){
             case 1:     //all corresponds
                 li.style.background = correctcolor; break;
             case 0:     //nothing corresponds
+                if(characs[i] == "release"){
+                    if(champion.release < tofind.release)
+                        datearrow.style.transform = "rotate(-90deg)";
+                    else
+                        datearrow.style.transform = "rotate(90deg)";
+                    li.append(datearrow);
+                }
                 li.style.background = incorrectcolor; break;
             default:    //partially correponds
                 li.style.background = partiallycolor; break;
@@ -293,6 +320,7 @@ function tryInput(){
     let input = document.getElementById("name").value;
     let inputchamp = findChampWithName(input);
     if(championsData.includes(inputchamp) && !namesGuessed.includes(input)){
+        document.getElementById("name").value = "";
         addGuess(input,champtofind);
         namesGuessed.push(input);
     }
@@ -300,10 +328,10 @@ function tryInput(){
         document.getElementById("input-button").style.display = "none";
         document.getElementById("play-again").style.display = "flex";
     }
-
-    input = '';
+    
 }
 
 
 
 startGame();
+document.querySelector('#name').focus();

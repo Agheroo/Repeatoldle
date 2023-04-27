@@ -22,7 +22,7 @@
 {"name":"Corki","gender":"Male","positions":"Middle","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle city, Piltover","release":2009},
 {"name":"Darius","gender":"Male","positions":"Top","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2012},
 {"name":"Diana","gender":"Female","positions":"Middle, Jungle","species":"Aspect, Human","resource":"Mana","range":"Melee","regions":"Targon","release":2012},
-{"name":"Dr. Mundo","gender":"Male","positions":"Top","species":"Chemically altered,Human","resource":"Health","range":"Melee","regions":"Zaun","release":2009},
+{"name":"Dr. Mundo","gender":"Male","positions":"Top","species":"Chemically altered, Human","resource":"Health","range":"Melee","regions":"Zaun","release":2009},
 {"name":"Draven","gender":"Male","positions":"Bottom","species":"Human","resource":"Mana","range":"Ranged","regions":"Noxus","release":2012}, 
 {"name":"Ekko","gender":"Male","positions":"Middle","species":"Human","resource":"Mana","range":"Melee","regions": "Zaun","release":2015},
 {"name":"Elise","gender":"Female","positions":"Jungle","species":"Human, Magically altered","resource":"Mana","range": "Ranged, Melee","regions":"Noxus, Shadow isles","release":2012},

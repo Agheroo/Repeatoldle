@@ -37,7 +37,18 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Gnar","gender":"Male","positions":"Top","species":"Yordle","resource":"Rage","range":"Ranged, Melee","regions":"Freljord","release":2014},
 {"name":"Gragas","gender":"Male","positions":"Jungle,Top","species":"Human","resource":"Mana","range":"Melee","regions":"Freljord","release":2010},
 {"name":"Graves","gender":"Male","positions":"Jungle","species":"Human","resource":"Mana","range":"Ranged","regions":"Bilgewater","release":2011},
-{"name":"Gwen","gender":"Female","positions":"Top","species":"Human, Magically altered","resource":"Mana","range":"Melee","regions":"Carmavor, Shadow isles","release":2011},
+{"name":"Gwen","gender":"Female","positions":"Top","species":"Human, Magically altered","resource":"Mana","range":"Melee","regions":"Carmavor, Shadow isles","release":2021},
+{"name":"Hecarim","gender":"Male","positions":"Jungle","species":"Undead","resource":"Mana","range":"Melee","regions":"Carmavor, Shadow isles","release":2012},
+{"name":"Heimerdinger","gender":"Male","positions":"Middle, Support","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Piltover","release":2009},
+{"name":"Illaoi","gender":"Female","positions":"Top","species":"Human, Spiritualist","resource":"Mana","range":"Melee","regions":"Bilgewater","release":2015},
+{"name":"Irelia","gender":"Female","positions":"Middle, Top","species":"Human, Spiritualist","resource":"Mana","range":"Melee","regions":"Ionia","release":2010},
+{"name":"Ivern","gender":"Male","positions":"Jungle","species":"Human, Magically altered","resource":"Mana","range":"Ranged","regions":"Freljord, Ionia","release":2016},
+{"name":"Janna","gender":"Female","positions":"Support","species":"God, Spirit","resource":"Mana","range":"Ranged","regions":"Shurima, Zaun","release":2009},
+{"name":"Jarvan IV","gender":"Male","positions":"Jungle","species":"Human","resource":"Mana","range":"Melee","regions":"Demacia","release":2011},
+{"name":"Jax","gender":"Male","positions":"Top, Jungle","species":"Unknown","resource":"Mana","range":"Melee","regions":"Icathia, Runeterra, Shurima","release":2009},
+{"name":"Jayce","gender":"Male","positions":"Top, Middle","species":"Human","resource":"Mana","range":"Ranged, Melee","regions":"Piltover","release":2012},
+{"name":"Jhin","gender":"Male","positions":"Bottom","species":"Human, Spiritualist","resource":"Mana","range":"Ranged","regions":"Ionia","release":2016},
+{"name":"Jinx","gender":"Female","positions":"Bottom","species":"Human, Chemically altered","resource":"Mana","range":"Ranged","regions":"Zaun","release":2013},
 ]
 
 var allguesses = document.getElementById("all-guesses");

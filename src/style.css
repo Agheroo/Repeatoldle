@@ -271,12 +271,12 @@ input{
 @keyframes flip{
     from{
         display:none;
-        filter:blur(3px);
+        filter:blur(5px) brightness(2);
         transform: rotate3d(0, 1 , 0 , 90deg);
     }
     to{
         display:flex;
-        filter:blur(0);
+        filter:blur(0) brightness(1);
         transform: rotate3d(0,1,0,0);
     }
 }

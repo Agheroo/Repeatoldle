@@ -90,7 +90,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Olaf","gender":"Male","positions":"Top","species":"Human, Iceborn","resource":"Mana","range":"Melee","regions":"Freljord","release":2010},
 {"name":"Orianna","gender":"Female","positions":"Middle","species":"Golem","resource":"Mana","range":"Ranged","regions":"Piltover","release":2011},
 {"name":"Ornn","gender":"Male","positions":"Top","species":"God, Spirit","resource":"Mana","range":"Melee","regions":"Freljord","release":2017},
-{"name":"Panthon","gender":"Male","positions":"Jungle, Support, Middle","species":"Human, Aspect","resource":"Mana","range":"Melee","regions":"Targon","release":2010},
+{"name":"Pantheon","gender":"Male","positions":"Jungle, Support, Middle","species":"Human, Aspect","resource":"Mana","range":"Melee","regions":"Targon","release":2010},
 {"name":"Poppy","gender":"Female","positions":"Jungle, Top","species":"Yordle","resource":"Mana","range":"Melee","regions":"Demacia","release":2010},
 {"name":"Pyke","gender":"Male","positions":"Support","species":"Revenant","resource":"Mana","range":"Melee","regions":"Bilgewater","release":2018},
 {"name":"Qiyana","gender":"Female","positions":"Middle, Jungle","species":"Human, Magicborn","resource":"Mana","range":"Melee","regions":"Ixtal","release":2019},
@@ -213,7 +213,6 @@ function checkCharac(tofind,guess,charac){
             tmpguess[char] = tmpguess[char].slice(1);
         guesschars.push(tmpguess[char]);
     }
-    console.log(guesschars);
     if(tofind[charac] == guess[charac])
         return 1;
     else{

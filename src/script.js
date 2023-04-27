@@ -48,7 +48,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Jax","gender":"Male","positions":"Top, Jungle","species":"Unknown","resource":"Mana","range":"Melee","regions":"Icathia, Runeterra, Shurima","release":2009},
 {"name":"Jayce","gender":"Male","positions":"Top, Middle","species":"Human","resource":"Mana","range":"Ranged, Melee","regions":"Piltover","release":2012},
 {"name":"Jhin","gender":"Male","positions":"Bottom","species":"Human, Spiritualist","resource":"Mana","range":"Ranged","regions":"Ionia","release":2016},
-{"name":"Jinx","gender":"Female","positions":"Bottom","species":"Human, Chemically altered","resource":"Mana","range":"Ranged","regions":"Zaun","release":2013},
+{"name":"Jinx","gender":"Female","positions":"Bottom","species":"Human, Chemically altered","resource":"Mana","range":"Ranged","regions":"Zaun","release":2013}
 ]
 
 var allguesses = document.getElementById("all-guesses");

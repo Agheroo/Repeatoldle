@@ -183,11 +183,10 @@ label{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 #enter-button{
     position:absolute;
-    left:75%;
     width:10%;
     display:flex;
     align-items: center;
@@ -231,12 +230,28 @@ input{
     width:100%;
 }
 #propositions{
-    position:relative;
-    top:-2em;
-    right:2.5em;
-    background-color: var(--bg-hud-darker);
-    width:60.3%;
+    display:flex;
+    flex-direction: column;
+    top:7.5em;
+    position:absolute;
+    width:66%;
+    border:solid 2px var(--hud-border-dark);
+
+    z-index: 10;
 }
+.proposition{
+    background: linear-gradient(to right, var(--bg-hud-darker), var(--bg-hud-light));
+    margin:0 0 0 0;
+    border:none;
+    border-bottom: solid 1px var(--hud-border-dark);
+
+    z-index: 100;
+}
+.proposition p{
+    margin-left:1em;
+    color: var(--gold-text);
+}
+
 #desc{
     display:flex;
     flex-direction: row;

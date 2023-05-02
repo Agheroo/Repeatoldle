@@ -163,6 +163,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Talon","gender":"Male","positions":"Middle, Jungle","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2011}
 ];
 
+document.getElementById("patch-note-wrapper").style.display = "none";
 var allguesses = document.getElementById("all-guesses");
 var champtofind;
 var randomchamp = championsData[Math.floor(Math.random()*championsData.length)];

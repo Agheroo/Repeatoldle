@@ -177,7 +177,7 @@ li{
     top:7em;
     position:absolute;
     z-index:20;
-    background:linear-gradient(-135deg, rgba(32,90,104,0.95) 10%, rgba(18,43,44,1) 70%, rgb(9, 25, 37));
+    background:linear-gradient(-135deg, rgba(32,90,104,0.95) 10%, rgba(18,43,44,0.95) 70%, rgb(9, 25, 37));
     border:solid 3px var(--hud-border-dark);
     border-radius: 2em;
 }

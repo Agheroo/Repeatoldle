@@ -159,7 +159,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Tristana","gender":"Female","positions":"Bottom","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle City","release":2009},
 {"name":"Thresh","gender":"Male","positions":"Support","species":"Undead","resource":"Mana","range":"Ranged","regions":"Shadow Isles","release":2013},
 {"name":"Teemo","gender":"Male","positions":"Top","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle City","release":2009},
-{"name":"Taric","gender":"Male","positions":"Suppirt","species":"Aspect, Human","resource":"Mana","rangeMelee":"","regions":"Targon, Demacia","release":2009},
+{"name":"Taric","gender":"Male","positions":"Support","species":"Aspect, Human","resource":"Mana","range":"Melee","regions":"Targon, Demacia","release":2009},
 {"name":"Talon","gender":"Male","positions":"Middle, Jungle","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2011}
 ];
 

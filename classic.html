@@ -10,16 +10,43 @@
 </head>
 
 <body id="classic">
-    <nav id="new-nav">
-        <ul id="main-nav">
-            <li><a href="#"><img class="icon" src="src/img/gclassic-icon.png" height="50"></img></a></li>
-            <li><a href="##"><img class="icon" src="src/img/gspell-icon.png" height="50"></img></a> </li>
-            <li><a href="###"><img class="icon" src="src/img/gquote-icon.png" height="50"></img></a></li>
-        </ul>
-    </nav>
-
+    <div id = "nav-patch-wrapper">
+        <nav id="new-nav">
+            <ul id="main-nav">
+                <li><a href="#"><img class="icon" src="src/img/gclassic-icon.png" height="50"></img></a></li>
+                <li><a href="##"><img class="icon" src="src/img/gspell-icon.png" height="50"></img></a> </li>
+                <li><a href="###"><img class="icon" src="src/img/gquote-icon.png" height="50"></img></a></li>
+            </ul>
+        </nav>
+        <img id = "patch-button" class = "icon" src = "src/img/gnotepad.png" height="40" onclick = "showPatchNote()">
+        <div id = "patch-note-wrapper">
+            <div id = "title-cross">
+                <h1>PATCH NOTES</h1>
+                <img id = "cross" src = "src/img/gcross.png" onclick="showPatchNote()" height = "40">
+            </div>
+            <div class = "scrollable">
+                
+                <span class = "line"></span>
+                <div id = "patch-note">
+                    <h2>Version 1.1.1</h2>
+                    <h3>Visual changes</h3>
+                    <p>
+                        - Added patch notes (duh)<br>
+                        - Added slightly shinier animations when discovering characteristics<br>
+                        - Added more suspens with animation of the search bar
+                    </p>
+                    <h3>Technical changes</h3>
+                    <p>
+                        - Fixed issues where same roles would come up as partially correct instead of correct<br>
+                        - Added the "auto-filling" system for better and easier use
+                    </p>
+                </div>
+                <span class = "line"></span>
+            </div>
+        </div>
+    </div>
     <div id=main>
-        <label for = "name">Enter your champion</label>
+        <label for = "name" onclick = "test('Aled')">Enter your champion</label>
         <div id = "propositions-input-wrapper">
             <div id = "input-button">
                 <input type = "text" id = "name" placeholder="Guess a champion here">

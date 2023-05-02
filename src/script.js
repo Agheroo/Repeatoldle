@@ -241,13 +241,16 @@ function addGuess(champname, tofind){
 
     let guess = document.createElement("ul");
     guess.className = "guess";
+    guess.style.zIndex = 1;
     let icon = document.createElement("img");
     icon.src = "src/champions/icons/"+ champname.toUpperCase()[0]+ champname.substring(1,champname.length).toLowerCase() + "Square.webp";
 
     let li =document.createElement("li");
     li.style.animation = "flip 1s forwards";
+    li.style.zIndex = 1;
     li.append(icon);
     guess.append(li);
+    
     let name = document.createElement("p");
     let gender = document.createElement("p");
     let positions = document.createElement("p");
@@ -292,6 +295,7 @@ function addGuess(champname, tofind){
 
         li.append(all[i]);
         guess.append(li);
+        guess.style.zIndex = 1;
     }
     allguesses.insertBefore(guess,prevguess);
     prevguess = guess;
@@ -317,6 +321,8 @@ function findChampWithName(champname){
 
 function tryInput(){
     let input = document.getElementById("name").value;
+    let inputbutton = document.getElementById("input-button");
+    
     let inputchamp = findChampWithName(input);
     if(championsData.includes(inputchamp) && !namesGuessed.includes(input)){
         document.getElementById("name").value = "";
@@ -324,13 +330,35 @@ function tryInput(){
         namesGuessed.push(input);
     }
     if(input.toLowerCase() == champtofind.name.toLowerCase()){
-        document.getElementById("input-button").style.display = "none";
-        document.getElementById("play-again").style.display = "flex";
+        inputbutton.style.animation = "win 2s forwards";
+        inputbutton.style.animationDelay = "2.5s";
+        setTimeout(()=>{
+            inputbutton.style.display = "none";
+            document.getElementById("play-again").style.display = "flex";
+        },4000)
     }
-    
 }
 
+function showPatchNote(){
+    if(document.getElementById("patch-note-wrapper").style.display == "none")
+        document.getElementById("patch-note-wrapper").style.display = "flex";
+    else
+        document.getElementById("patch-note-wrapper").style.display = "none";
+}
 
-
+function test(champion){
+    var all = document.getElementById("propositions");
+    var proposition = document.createElement("li");
+    var icon = document.createElement("img");
+    var name = document.createElement("p");
+    proposition.className = "proposition";
+    name.textContent = champion;
+    icon.src = "src/champions/icons/AatroxSquare.webp";
+    icon.height = "50";
+    proposition.append(icon);
+    proposition.append(name);
+    proposition.style.zIndex = 10;
+    all.append(proposition);
+}
 startGame();
 document.querySelector('#name').focus();

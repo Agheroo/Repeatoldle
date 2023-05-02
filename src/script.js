@@ -19,7 +19,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Camille","gender":"Female","positions":"Top","species":"Cyborg, Human","resource":"Mana","range":"Melee","regions":"Piltover","release":2016},
 {"name":"Cassiopeia","gender":"Female","positions":"Middle","species":"Human, Magically altered","resource":"Mana","range":"Ranged","regions":"Shurima, Noxus","release":2010},
 {"name":"Cho'gath","gender":"Male","positions":"Top","species":"Void being","resource":"Mana","range":"Melee","regions":"Void","release":2009},
-{"name":"Corki","gender":"Male","positions":"Middle","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle city, Piltover","release":2009},
+{"name":"Corki","gender":"Male","positions":"Middle","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle City, Piltover","release":2009},
 {"name":"Darius","gender":"Male","positions":"Top","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2012},
 {"name":"Diana","gender":"Female","positions":"Middle, Jungle","species":"Aspect, Human","resource":"Mana","range":"Melee","regions":"Targon","release":2012},
 {"name":"Dr. Mundo","gender":"Male","positions":"Top","species":"Chemically altered, Human","resource":"Health","range":"Melee","regions":"Zaun","release":2009},
@@ -69,7 +69,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Lillia","gender":"Female","positions":"Jungle, Top","species":"Spirit","resource":"Mana","range":"Melee","regions":"Ionia","release":2020},
 {"name":"Lissandra","gender":"Female","positions":"Middle","species":"Human, Iceborn","resource":"Mana","range":"Ranged","regions":"Frljord","release":2013},
 {"name":"Lucian","gender":"Male","positions":"Bottom","species":"Human","resource":"Mana","range":"Ranged","regions":"Demacia, Shadow Isles","release":2013},
-{"name":"Lulu","gender":"Female","positions":"Support","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle city","release":2012},
+{"name":"Lulu","gender":"Female","positions":"Support","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Bandle City","release":2012},
 {"name":"Lux","gender":"Female","positions":"Middle, Support","species":"Human, Magicborn","resource":"Mana","range":"Ranged","regions":"Demacia","release":2010},
 {"name":"Master Yi","gender":"Male","positions":"Jungle","species":"Human, Spiritualist","resource":"Mana","range":"Melee","regions":"Ionia","release":2009},
 {"name":"Malphite","gender":"Male","positions":"Top","species":"Golem","resource":"Mana","range":"Melee","regions":"Ixtal, Shurima","release":2009},
@@ -103,7 +103,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Renekton","gender":"Male","positions":"Top","species":"God-warrior","resource":"Fury","range":"Melee","regions":"Shurima","release":2011},
 {"name":"Rengar","gender":"Male","positions":"Jungle, Top","species":"Vastayan","resource":"Ferocity","range":"Melee","regions":"Shurima, Ixtal","release":2012},
 {"name":"Riven","gender":"Female","positions":"Top","species":"Human","resource":"Manaless","range":"Melee","regions":"Ionia, Noxus","release":2011},
-{"name":"Rumble","gender":"Male","positions":"Middle, Top","species":"Yordle","resource":"Heat","range":"Melee","regions":"Bandle city","release":2011},
+{"name":"Rumble","gender":"Male","positions":"Middle, Top","species":"Yordle","resource":"Heat","range":"Melee","regions":"Bandle City","release":2011},
 {"name":"Ryze","gender":"Male","positions":"Middle, Top","species":"Human, Magically altered","resource":"Mana","range":"Ranged","regions":"Runeterra","release":2009},
 {"name":"Samira","gender":"Female","positions":"Bottom","species":"Human","resource":"Mana","range":"Ranged","regions":"Noxus, Shurima","release":2020},
 {"name":"Sejuani","gender":"Female","positions":"Jungle","species":"Human, Iceborn","resource":"Mana","range":"Melee","regions":"Freljord","release":2012},
@@ -130,7 +130,7 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Ziggs","gender":"Male","positions":"Middle, Bottom","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Zaun","release":2012},
 {"name":"Zeri","gender":"Female","positions":"Bottom","species":"Human, Magicborn","resource":"Mana","range":"Ranged","regions":"Zaun","release":2022},
 {"name":"Zed","gender":"Male","positions":"Middle","species":"Human, Magically altered","resource":"Energy","range":"Melee","regions":"Ionia","release":2012},
-{"name":"Zac","gender":"Male","positions":"Jungle","species":"Golem","resource":"Health costs","range":"Melee","regions":"Zaun","release":2013},
+{"name":"Zac","gender":"Male","positions":"Jungle","species":"Golem","resource":"Health","range":"Melee","regions":"Zaun","release":2013},
 {"name":"Yuumi","gender":"Female","positions":"Support","species":"Cat, Magically altered","resource":"Mana","range":"Ranged","regions":"Bandle City","release":2019},
 {"name":"Yorick","gender":"Male","positions":"Top","species":"Human, Magically altered","resource":"Mana","range":"Melee","regions":"Shadow Isles","release":2011},
 {"name":"Yone","gender":"Male","positions":"Middle, Top","species":"Human, Magically altered","resource":"Manaless","range":"Melee","regions":"Ionia","release":2020},
@@ -209,15 +209,17 @@ function checkCharac(tofind,guess,charac){
             tmpfind[char] = tmpfind[char].slice(1);
         findchars.push(tmpfind[char]);
     }
+    console.log(findchars);
     for(let char in tmpguess){
         if(tmpguess[char].charAt(0) == " ")     //Split the string when there are multiple choices in one charac
             tmpguess[char] = tmpguess[char].slice(1);
         guesschars.push(tmpguess[char]);
     }
+    console.log(guesschars);
     if(tofind[charac] == guess[charac])
         return 1;
     else{
-        for(let char in findchars){
+        for(let char in guesschars){
             if(findchars.includes(guesschars[char]) || guesschars.includes(findchars[char]))
                 return 2;
             else

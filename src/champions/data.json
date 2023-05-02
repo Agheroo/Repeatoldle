@@ -130,7 +130,7 @@
 {"name":"Ziggs","gender":"Male","positions":"Middle, Bottom","species":"Yordle","resource":"Mana","range":"Ranged","regions":"Zaun","release":2012},
 {"name":"Zeri","gender":"Female","positions":"Bottom","species":"Human, Magicborn","resource":"Mana","range":"Ranged","regions":"Zaun","release":2022},
 {"name":"Zed","gender":"Male","positions":"Middle","species":"Human, Magically altered","resource":"Energy","range":"Melee","regions":"Ionia","release":2012},
-{"name":"Zac","gender":"Male","positions":"Jungle","species":"Golem","resource":"Health costs","range":"Melee","regions":"Zaun","release":2013},
+{"name":"Zac","gender":"Male","positions":"Jungle","species":"Golem","resource":"Health","range":"Melee","regions":"Zaun","release":2013},
 {"name":"Yuumi","gender":"Female","positions":"Support","species":"Cat, Magically altered","resource":"Mana","range":"Ranged","regions":"Bandle City","release":2019},
 {"name":"Yorick","gender":"Male","positions":"Top","species":"Human, Magically altered","resource":"Mana","range":"Melee","regions":"Shadow Isles","release":2011},
 {"name":"Yone","gender":"Male","positions":"Middle, Top","species":"Human, Magically altered","resource":"Manaless","range":"Melee","regions":"Ionia","release":2020},

@@ -182,13 +182,12 @@ document.addEventListener('keydown', function(event){
     }
 });
 document.addEventListener('keyup', function(event){
-    if("azertyuiopqsdfghjklmwxcvbn".includes(event.key)){
+    if("azertyuiopqsdfghjklmwxcvbn .".includes(event.key)){
         propositions = [];
         
         for(let i=0;i<championsData.length; i++){
-            if((championsData[i].name).toLowerCase().includes(document.getElementById("name").value) && !namesGuessed.includes(championsData[i].name)){
+            if((championsData[i].name).toLowerCase().replace("'","").replace(" ","").replace(".", "").includes(document.getElementById("name").value) && !namesGuessed.includes(championsData[i].name))
                 propositions.push(championsData[i].name);
-            }
         }
         console.log(propositions);
     }

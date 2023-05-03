@@ -166,17 +166,33 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 document.getElementById("patch-note-wrapper").style.display = "none";
 var allguesses = document.getElementById("all-guesses");
 var champtofind;
-var randomchamp = championsData[Math.floor(Math.random()*championsData.length)];
 let correctcolor = "radial-gradient(var(--correct), var(--correct-dark))";
 let incorrectcolor = "radial-gradient(var(--incorrect), var(--incorrect-dark))";
 let partiallycolor = "radial-gradient(var(--partially), var(--partially-dark))";
 let prevguess = document.getElementById("prev-guess");
 var namesGuessed = [];
-
+let propositions = [];
 
 document.addEventListener('keydown', function(event){
-    if(event.key == "Enter")
+    if(event.key == "Enter" && document.getElementById("name").value != "" && propositions.length != 0){
+        console.log(propositions);
+        document.getElementById("name").value = propositions[0];
+        propositions = [];
         tryInput();
+    }
+});
+document.addEventListener('keyup', function(event){
+    if("azertyuiopqsdfghjklmwxcvbn".includes(event.key)){
+        propositions = [];
+        
+        for(let i=0;i<championsData.length; i++){
+            if((championsData[i].name).toLowerCase().includes(document.getElementById("name").value) && !namesGuessed.includes(championsData[i].name)){
+                propositions.push(championsData[i].name);
+            }
+        }
+        console.log(propositions);
+    }
+    console.log(document.getElementById("name").value);
 });
 function startGame(){
     input = "";
@@ -209,13 +225,11 @@ function checkCharac(tofind,guess,charac){
             tmpfind[char] = tmpfind[char].slice(1);
         findchars.push(tmpfind[char]);
     }
-    console.log(findchars);
     for(let char in tmpguess){
         if(tmpguess[char].charAt(0) == " ")     //Split the string when there are multiple choices in one charac
             tmpguess[char] = tmpguess[char].slice(1);
         guesschars.push(tmpguess[char]);
     }
-    console.log(guesschars);
     if(tofind[charac] == guess[charac])
         return 1;
     else{

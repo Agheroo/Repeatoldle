@@ -175,7 +175,6 @@ let propositions = [];
 
 document.addEventListener('keydown', function(event){
     if(event.key == "Enter" && document.getElementById("name").value != "" && propositions.length != 0){
-        console.log(propositions);
         document.getElementById("name").value = propositions[0];
         propositions = [];
         tryInput();
@@ -189,9 +188,7 @@ document.addEventListener('keyup', function(event){
             if((championsData[i].name).toLowerCase().replace("'","").replace(" ","").replace(".", "").includes(document.getElementById("name").value) && !namesGuessed.includes(championsData[i].name))
                 propositions.push(championsData[i].name);
         }
-        console.log(propositions);
     }
-    console.log(document.getElementById("name").value);
 });
 function startGame(){
     input = "";
@@ -218,7 +215,7 @@ function checkCharac(tofind,guess,charac){
     let tmpguess = String(guess[charac]).split(",");
     let tmpfind = String(tofind[charac]).split(",");
     let guesschars = [], findchars = [];
-
+    let flag =0;
     for(let char in tmpfind){
         if(tmpfind[char].charAt(0) == " ")
             tmpfind[char] = tmpfind[char].slice(1);
@@ -234,10 +231,12 @@ function checkCharac(tofind,guess,charac){
     else{
         for(let char in guesschars){
             if(findchars.includes(guesschars[char]) || guesschars.includes(findchars[char]))
-                return 2;
-            else
-                return 0;
+                flag = 1;
         }
+        if(flag == 1)
+            return 2;
+        else
+            return 0;
     }
 }
 

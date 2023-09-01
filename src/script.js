@@ -163,6 +163,12 @@ var championsData = [{"name":"Aatrox","gender":"Male","positions":"Top","species
 {"name":"Talon","gender":"Male","positions":"Middle, Jungle","species":"Human","resource":"Mana","range":"Melee","regions":"Noxus","release":2011}
 ];
 
+championsData.sort(function(a, b) {
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+});
+
 document.getElementById("patch-note-wrapper").style.display = "none";
 var allguesses = document.getElementById("all-guesses");
 var champtofind;
@@ -185,7 +191,7 @@ document.addEventListener('keyup', function(event){
         propositions = [];
         
         for(let i=0;i<championsData.length; i++){
-            if((championsData[i].name).toLowerCase().replace("'","").replace(" ","").replace(".", "").includes(document.getElementById("name").value) && !namesGuessed.includes(championsData[i].name))
+            if((championsData[i].name).toLowerCase().replace("'","").replace(" ","").replace(".", "").startsWith(document.getElementById("name").value) && !namesGuessed.includes(championsData[i].name))
                 propositions.push(championsData[i].name);
         }
     }
